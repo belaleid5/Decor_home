@@ -64,6 +64,7 @@ abstract class AppTextStyles {
     );
   }
 
+
   static TextStyle interDes20(BuildContext context) {
     final res = ResponsiveHelper(context);
     return GoogleFonts.inter(
@@ -74,7 +75,7 @@ abstract class AppTextStyles {
 
   static TextStyle poppinsDes14(BuildContext context) {
     final res = ResponsiveHelper(context);
-    return GoogleFonts.poppins(fontSize: res.sp(5));
+    return GoogleFonts.poppins(fontSize: res.sp(3));
   }
 
   static TextStyle poppinsDes15(BuildContext context) {

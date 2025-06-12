@@ -1,4 +1,5 @@
 import 'package:decor_app/core/responsive/responsive_helper.dart';
+import 'package:decor_app/core/routing/app_router.dart';
 import 'package:decor_app/core/utils/app_color.dart';
 import 'package:decor_app/core/utils/app_images.dart';
 import 'package:decor_app/core/utils/app_text.dart';
@@ -9,7 +10,7 @@ import 'package:decor_app/features/auth/presentation/widgets/custom_circule_avat
 import 'package:decor_app/features/auth/presentation/widgets/custom_elevated_butto.dart';
 import 'package:decor_app/features/auth/presentation/widgets/custom_title_text_form.dart';
 import 'package:decor_app/features/auth/presentation/widgets/forget_password.dart';
-import 'package:decor_app/features/auth/presentation/widgets/go_to_sign_up.dart';
+import 'package:decor_app/features/auth/presentation/widgets/go_to_sign_up_or_in.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreenBodyMobile extends StatelessWidget {
@@ -44,13 +45,11 @@ class LoginScreenBodyMobile extends StatelessWidget {
                 SizedBox(height: r.hp(0.5)),
 
                 CustomTextFormFiled(
-                  suffixIcon: IconButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(AppColor.primaryColor),
-                    ),
-                    onPressed: () {},
-                    icon: Icon(Icons.remove_red_eye,),
+                  suffixIcon: Icon(
+                    Icons.remove_red_eye,
+                    color: AppColor.primaryColor,
                   ),
+
                   hint: "● ● ● ● ● ● ● ●",
                 ),
                 SizedBox(height: r.hp(4)),
@@ -76,17 +75,23 @@ class LoginScreenBodyMobile extends StatelessWidget {
                   children: [
                     CustomCircleSocialIcon(
                       onTap: () {},
-                      imageIcon: AppImages.googleIcon,
+                      imageIcon: AppImages.facebookIcon,
                     ),
                     CustomCircleSocialIcon(
                       onTap: () {},
-                      imageIcon: AppImages.facebookIcon,
+                      imageIcon: AppImages.googleIcon,
                     ),
                   ],
                 ),
 
                 SizedBox(height: r.hp(4)),
-                GoToSignUp(),
+                GoToSignUpOrIn(
+                  goToScreen: "Sign Up",
+                  firstMessage: "Don't have an account? ",
+                  onTap: () {
+                    
+                  },
+                ),
                 SizedBox(height: r.hp(4)),
               ],
             ),

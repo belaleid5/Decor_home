@@ -11,7 +11,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context),
+      appBar: buildAppBar(context,'Login'),
       body:  ResponsiveLayout(
       mobile: const LoginScreenBodyMobile(),
       desktop: const LoginDesktopView(),

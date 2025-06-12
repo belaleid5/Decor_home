@@ -1,10 +1,15 @@
+import 'package:decor_app/core/routing/app_router.dart';
 import 'package:decor_app/core/utils/app_color.dart';
 import 'package:decor_app/core/utils/app_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class GoToSignUp extends StatelessWidget {
-  const GoToSignUp({super.key});
+class GoToSignUpOrIn extends StatelessWidget {
+  const GoToSignUpOrIn({super.key, required this.onTap, required this.firstMessage, required this.goToScreen});
+
+  final void Function() onTap;
+  final String firstMessage;
+  final String goToScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -14,18 +19,21 @@ class GoToSignUp extends StatelessWidget {
         TextSpan(
           children: <TextSpan>[
             TextSpan(
-              text: "Don't have an account? ",
+              text: firstMessage,
               style: AppTextStyles.poppins14(context),
             ),
             TextSpan(
-              text: "Sign up",
+              text: goToScreen,
               style: AppTextStyles.poppins14(
                 context,
               ).copyWith(color: AppColor.primaryColor),
               recognizer:
                   TapGestureRecognizer()
                     ..onTap = () {
-                      // Handle sign up tap
+                      Navigator.pushReplacementNamed(
+                        context,
+                        AppRouter.signUpRoute,
+                      );
                     },
             ),
           ],

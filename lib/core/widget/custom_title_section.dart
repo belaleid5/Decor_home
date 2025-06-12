@@ -14,8 +14,12 @@ class CustomTitleSection extends StatelessWidget {
       title,
       style:
           res.isDesktop
-              ? AppTextStyles.interDes20(context)
-              : AppTextStyles.inter20(context),
+              ? AppTextStyles.interDes20(
+                context,
+              ).copyWith(fontWeight: FontWeight.bold)
+              : AppTextStyles.inter20(
+                context,
+              ).copyWith(fontWeight: FontWeight.bold),
     );
   }
 }

@@ -14,12 +14,15 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
     theme: ThemeData(
-      appBarTheme: const AppBarTheme(
+      appBarTheme:  AppBarTheme(
+
         actionsIconTheme: IconThemeData(
           color: AppColor.iconColor, // Change to your desired color
         ),
         elevation: 0.0,
-        backgroundColor: Colors.white, // Change to your desired color
+        color: Colors.white,
+        foregroundColor: Colors.white,
+   // Change to your desired color
       ),
            scaffoldBackgroundColor: Colors.white, // Change to your desired color
     ),
