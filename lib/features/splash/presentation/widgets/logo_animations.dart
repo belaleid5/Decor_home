@@ -23,13 +23,15 @@ class _LogoAnimationsPageState extends State<LogoAnimationsPage>
       vsync: this,
     )..repeat(reverse: true);
 
-    _scaleAnimation = Tween<double>(begin: 0.8, end: 1.2).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _scaleAnimation = Tween<double>(
+      begin: 0.8,
+      end: 1.2,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
-    _fadeAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _fadeAnimation = Tween<double>(
+      begin: 0.5,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -49,8 +51,8 @@ class _LogoAnimationsPageState extends State<LogoAnimationsPage>
             scale: _scaleAnimation.value,
             child: SvgPicture.asset(
               AppImages.logoSplash,
-              height: MediaQuery.of(context).size.height * 0.2, 
-              width: MediaQuery.of(context).size.width * 0.37, // 
+              height: MediaQuery.of(context).size.height * 0.2,
+              width: MediaQuery.of(context).size.width * 0.37,
             ),
           ),
         );

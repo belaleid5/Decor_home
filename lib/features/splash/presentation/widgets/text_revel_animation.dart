@@ -1,3 +1,4 @@
+import 'package:decor_app/core/routing/app_router.dart';
 import 'package:flutter/material.dart';
 
 class TextRevealAnimation extends StatefulWidget {
@@ -35,9 +36,10 @@ class _TextRevealAnimationState extends State<TextRevealAnimation>
       end: Offset.zero,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
 
-    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
-    );
+    _fadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
 
     Future.delayed(widget.delay, () {
       if (mounted) {
@@ -46,18 +48,13 @@ class _TextRevealAnimationState extends State<TextRevealAnimation>
     });
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _fadeAnimation,
       child: SlideTransition(
         position: _slideAnimation,
-        child: Text(
-          widget.text,
-          style: widget.textStyle,
-        ),
+        child: Text(widget.text, style: widget.textStyle),
       ),
     );
   }
@@ -68,5 +65,3 @@ class _TextRevealAnimationState extends State<TextRevealAnimation>
     super.dispose();
   }
 }
-
-

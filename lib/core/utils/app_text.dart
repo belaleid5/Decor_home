@@ -1,38 +1,97 @@
+import 'package:decor_app/core/responsive/responsive_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppTextStyles {
-  static TextStyle inter33 = GoogleFonts.inter(
-    fontSize: 33,
-    fontWeight: FontWeight.normal,
-  );
+  static TextStyle inter33(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.inter(
+      fontSize: res.sp(33),
+      fontWeight: FontWeight.normal,
+    );
+  }
 
-  static  TextStyle poppins58 = GoogleFonts.poppins(
-    fontSize: 58.85,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle poppins58(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.poppins(
+      fontSize: res.sp(58),
+      fontWeight: FontWeight.w600,
+    );
+  }
 
+  static TextStyle inter20(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.inter(
+      fontSize: res.sp(20),
+      fontWeight: FontWeight.normal,
+    );
+  }
 
+  static TextStyle poppins14(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.poppins(fontSize: res.sp(14));
+  }
 
-  static const TextStyle semiBold13 = TextStyle(
-    fontWeight: FontWeight.w600,
-    fontSize: 13,
-  );
+  static TextStyle poppins15(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.poppins(
+      fontSize: res.sp(15),
+      fontWeight: FontWeight.bold,
+    );
+  }
 
-  static const TextStyle regular13 = TextStyle(
-    fontWeight: FontWeight.normal,
-    fontSize: 13,
-  );
+  static TextStyle poppins16(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.poppins(
+      fontSize: res.sp(16),
+      fontWeight: FontWeight.normal,
+    );
+  }
 
-  static const TextStyle bold16 = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 16,
-  );
+  static TextStyle interDes33(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.inter(
+      fontSize: res.sp(11),
+      fontWeight: FontWeight.normal,
+    );
+  }
 
-  static const TextStyle bold19 = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 19,
-  );
+  static TextStyle poppinsDes58(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.poppins(
+      fontSize: res.sp(15),
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle interDes20(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.inter(
+      fontSize: res.sp(8),
+      fontWeight: FontWeight.normal,
+    );
+  }
+
+  static TextStyle poppinsDes14(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.poppins(fontSize: res.sp(5));
+  }
+
+  static TextStyle poppinsDes15(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.poppins(
+      fontSize: res.sp(4),
+      fontWeight: FontWeight.bold,
+    );
+  }
+
+  static TextStyle poppinsDes16(BuildContext context) {
+    final res = ResponsiveHelper(context);
+    return GoogleFonts.poppins(
+      fontSize: res.sp(5),
+      fontWeight: FontWeight.normal,
+    );
+  }
 
   static const TextStyle semiBold16 = TextStyle(
     fontWeight: FontWeight.w600,
