@@ -2,12 +2,12 @@ import 'package:decor_app/core/responsive/responsive_helper.dart';
 import 'package:decor_app/core/routing/app_router.dart';
 import 'package:decor_app/core/utils/app_images.dart';
 import 'package:decor_app/core/utils/app_text.dart';
-import 'package:decor_app/features/auth/presentation/widgets/cusotm_text_form_field.dart';
-import 'package:decor_app/features/auth/presentation/widgets/custom_circule_avatr_icon.dart';
-import 'package:decor_app/features/auth/presentation/widgets/custom_elevated_butto.dart';
-import 'package:decor_app/features/auth/presentation/widgets/custom_title_text_form.dart';
-import 'package:decor_app/features/auth/presentation/widgets/go_to_sign_up_or_in.dart';
-import 'package:decor_app/features/auth/presentation/widgets/terms_condition.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/cusotm_text_form_field.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_circule_avatr_icon.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_elevated_butto.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_title_text_form.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/go_to_sign_up_or_in.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/terms_condition.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreenBody extends StatelessWidget {
@@ -44,33 +44,33 @@ class SignUpScreenBody extends StatelessWidget {
             SizedBox(height: res.hp(1.5)),
             TermCondition(),
             SizedBox(height: res.hp(0.7)),
-            CustomElevatedButton(),
-             Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "or sign up with",
-                    style:
-                        res.isDesktop
-                            ? AppTextStyles.poppinsDes14(context)
-                            : AppTextStyles.poppins14(context),
-                  ),
-                ),
-                SizedBox(height: res.hp(1.5)),
+            CustomElevatedButton(title: "LogIn",),
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                "or sign up with",
+                style:
+                    res.isDesktop
+                        ? AppTextStyles.poppins14(context)
+                        : AppTextStyles.poppins14(context),
+              ),
+            ),
+            SizedBox(height: res.hp(1.5)),
             Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 10,
-                  children: [
-                    CustomCircleSocialIcon(
-                      onTap: () {},
-                      imageIcon: AppImages.facebookIcon,
-                    ),
-                    CustomCircleSocialIcon(
-                      onTap: () {},
-                      imageIcon: AppImages.googleIcon,
-                    ),
-                  ],
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 10,
+              children: [
+                CustomCircleSocialIcon(
+                  onTap: () {},
+                  imageIcon: AppImages.facebookIcon,
                 ),
-                SizedBox(height: res.hp(1.0)),
+                CustomCircleSocialIcon(
+                  onTap: () {},
+                  imageIcon: AppImages.googleIcon,
+                ),
+              ],
+            ),
+            SizedBox(height: res.hp(1.0)),
             GoToSignUpOrIn(
               firstMessage: "Already have an account?",
               goToScreen: "LogIn",
@@ -84,5 +84,3 @@ class SignUpScreenBody extends StatelessWidget {
     );
   }
 }
-
-

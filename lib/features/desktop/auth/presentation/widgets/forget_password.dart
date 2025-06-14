@@ -7,11 +7,18 @@ class ForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        final r = ResponsiveHelper(context);
+    final r = ResponsiveHelper(context);
     return Align(
       alignment: Alignment.center,
       child: GestureDetector(
-        child: Text("Forgot Password?",style: r.isDesktop? AppTextStyles.poppinsDes14(context):AppTextStyles.poppins14(context),)),
+        child: Text(
+          "Forgot Password?",
+          style:
+              r.isDesktop
+                  ? AppTextStyles.poppins14(context)
+                  : AppTextStyles.poppins14(context),
+        ),
+      ),
     );
   }
 }

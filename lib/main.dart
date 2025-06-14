@@ -8,23 +8,18 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
 
     return MaterialApp(
     theme: ThemeData(
       appBarTheme:  AppBarTheme(
-
-        actionsIconTheme: IconThemeData(
-          color: AppColor.iconColor, // Change to your desired color
-        ),
+        iconTheme: const IconThemeData(color: AppColor.iconColor),
         elevation: 0.0,
         color: Colors.white,
         foregroundColor: Colors.white,
-   // Change to your desired color
       ),
-           scaffoldBackgroundColor: Colors.white, // Change to your desired color
+           scaffoldBackgroundColor: Colors.white, 
     ),
       debugShowCheckedModeBanner: false,
       title: 'Decor App',

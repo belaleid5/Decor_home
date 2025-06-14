@@ -3,17 +3,17 @@ import 'package:decor_app/core/utils/app_color.dart';
 import 'package:decor_app/core/utils/app_text.dart';
 import 'package:flutter/material.dart';
 
-AppBar buildAppBar(BuildContext context,String title) {
+AppBar buildAppBar(BuildContext context, String title,bool ?leadingIcon) {
   final res = ResponsiveHelper(context);
 
   return AppBar(
+    automaticallyImplyLeading: leadingIcon ??true,
     centerTitle: true,
-    backgroundColor: Colors.white,
-     elevation: 0.0,
+    elevation: 0.0,
     title: Text(
-     title ,
+      title,
       style: AppTextStyles.inter20(context).copyWith(
-        fontSize: res.isDesktop ? res.sp(15) : res.sp(20),
+        fontSize: res.sp(20),
         color: AppColor.primaryColor,
       ),
     ),

@@ -3,10 +3,10 @@ import 'package:decor_app/core/utils/app_color.dart';
 import 'package:decor_app/core/utils/app_text.dart';
 import 'package:decor_app/core/widget/custom_sup_title_sections.dart';
 import 'package:decor_app/core/widget/custom_title_section.dart';
-import 'package:decor_app/features/auth/presentation/widgets/cusotm_text_form_field.dart';
-import 'package:decor_app/features/auth/presentation/widgets/custom_elevated_butto.dart';
-import 'package:decor_app/features/auth/presentation/widgets/custom_title_text_form.dart';
-import 'package:decor_app/features/auth/presentation/widgets/forget_password.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/cusotm_text_form_field.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_elevated_butto.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_title_text_form.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/forget_password.dart';
 import 'package:flutter/material.dart';
 
 class LoginDesktopView extends StatelessWidget {
@@ -39,7 +39,7 @@ class LoginDesktopView extends StatelessWidget {
             CustomTitleTextForm(title: "Username or email"),
 
             CustomTextFormFiled(
-              style: AppTextStyles.poppinsDes14(context),
+              style: AppTextStyles.poppins14(context),
 
               hint: "Enter Your Email",
             ),
@@ -48,12 +48,12 @@ class LoginDesktopView extends StatelessWidget {
             CustomTitleTextForm(title: "Password"),
 
             CustomTextFormFiled(
-              style: AppTextStyles.poppinsDes14(context),
+              style: AppTextStyles.poppins14(context),
               hint: "Enter Your Password",
             ),
             SizedBox(height: r.hp(4)),
 
-            CustomElevatedButton(),
+            CustomElevatedButton(title: "LogIn",),
             ForgetPassword(),
             // Add login button or anything else
           ],
@@ -62,8 +62,3 @@ class LoginDesktopView extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

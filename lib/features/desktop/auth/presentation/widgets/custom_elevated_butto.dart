@@ -28,7 +28,7 @@ class CustomElevatedButton extends StatelessWidget {
           "LogIn",
           style:
               res.isDesktop
-                  ? AppTextStyles.interDes20(
+                  ? AppTextStyles.inter20(
                     context,
                   ).copyWith(color: AppColor.textColorButton)
                   : AppTextStyles.inter20(

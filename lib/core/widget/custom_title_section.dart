@@ -10,16 +10,20 @@ class CustomTitleSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final res = ResponsiveHelper(context);
-    return Text(
-      title,
-      style:
-          res.isDesktop
-              ? AppTextStyles.interDes20(
-                context,
-              ).copyWith(fontWeight: FontWeight.bold)
-              : AppTextStyles.inter20(
-                context,
-              ).copyWith(fontWeight: FontWeight.bold),
+    return Align(
+      alignment: res.isDesktop ? Alignment(-0.3, 0) : Alignment.centerLeft,
+
+      child: Text(
+        title,
+        style:
+            res.isDesktop
+                ? AppTextStyles.inter20(
+                  context,
+                ).copyWith(fontWeight: FontWeight.bold)
+                : AppTextStyles.inter20(
+                  context,
+                ).copyWith(fontWeight: FontWeight.bold),
+      ),
     );
   }
 }

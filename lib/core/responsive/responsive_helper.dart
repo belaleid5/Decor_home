@@ -20,5 +20,9 @@ class ResponsiveHelper {
   double hp(double percent) => screenHeight * percent / 100;
 
   // Scaled font size based on screen width
-  double sp(double fontSize) => fontSize * screenWidth / 394;
+  double sp(double fontSize) {
+  if (isDesktop) return fontSize * 1.6;
+  if (isTablet) return fontSize * 1.3;
+  return fontSize * screenWidth / 394; // mobile baseline
+}
 }

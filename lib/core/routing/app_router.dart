@@ -1,6 +1,6 @@
-import 'package:decor_app/features/auth/presentation/pages/login_sceen.dart';
-import 'package:decor_app/features/auth/presentation/pages/sign_up_screen.dart';
-import 'package:decor_app/features/splash/presentation/pages/splash_screen.dart';
+import 'package:decor_app/features/mobile/auth/presentation/pages/login_sceen.dart';
+import 'package:decor_app/features/mobile/auth/presentation/pages/sign_up_screen.dart';
+import 'package:decor_app/features/mobile/splash/presentation/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
