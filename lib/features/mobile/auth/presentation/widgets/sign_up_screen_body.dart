@@ -7,6 +7,7 @@ import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_circu
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_elevated_butto.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_title_text_form.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/go_to_sign_up_or_in.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/password_field.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/terms_condition.dart';
 import 'package:flutter/material.dart';
 
@@ -37,10 +38,10 @@ class SignUpScreenBody extends StatelessWidget {
             CustomTextFormFiled(hint: "DD / MM /YYY"),
             SizedBox(height: res.hp(0.7)),
             CustomTitleTextForm(title: "Password"),
-            CustomTextFormFiled(hint: "● ● ● ● ● ●● ●"),
+                PasswordField(),
             SizedBox(height: res.hp(0.7)),
             CustomTitleTextForm(title: "Confirm Password"),
-            CustomTextFormFiled(hint: "● ● ● ● ● ●● ●"),
+            PasswordField(),
             SizedBox(height: res.hp(1.5)),
             TermCondition(),
             SizedBox(height: res.hp(0.7)),

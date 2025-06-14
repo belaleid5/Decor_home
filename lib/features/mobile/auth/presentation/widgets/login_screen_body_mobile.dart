@@ -10,6 +10,7 @@ import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_eleva
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_title_text_form.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/forget_password.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/go_to_sign_up_or_in.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/password_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreenBodyMobile extends StatelessWidget {
@@ -40,15 +41,7 @@ class LoginScreenBodyMobile extends StatelessWidget {
               SizedBox(height: r.hp(1.5)),
               CustomTitleTextForm(title: "Password"),
               SizedBox(height: r.hp(0.5)),
-
-              CustomTextFormFiled(
-                suffixIcon: Icon(
-                  Icons.remove_red_eye,
-                  color: AppColor.primaryColor,
-                ),
-
-                hint: "● ● ● ● ● ● ● ●",
-              ),
+              PasswordField(),
               SizedBox(height: r.hp(4)),
               CustomElevatedButton(title: "LogIn",),
               SizedBox(height: r.hp(2.5)),

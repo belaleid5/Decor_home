@@ -1,4 +1,5 @@
 import 'package:decor_app/core/responsive/responsive_helper.dart';
+import 'package:decor_app/core/routing/app_router.dart';
 import 'package:decor_app/core/utils/app_color.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_elevated_butto.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_title_text_form.dart';
@@ -34,7 +35,8 @@ class CustomContainerFieldForgetPassword extends StatelessWidget {
             CustomTitleTextForm(title: "Enter your email address"),
             TextFormForgetPassword(res: res),
             SizedBox(height: res.hp(res.isMobile ? 3.5 : 3)),
-            CustomElevatedButton(title: "Next"),
+            CustomElevatedButton(title: "Next",onPressed: ()=>Navigator.pushReplacementNamed(context,
+             AppRouter.setPassword)),
           ],
         ),
       ),

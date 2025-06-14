@@ -4,8 +4,9 @@ import 'package:decor_app/core/utils/app_text.dart';
 import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({super.key, required this.title});
+  const CustomElevatedButton({super.key, required this.title, this.onPressed});
   final String title;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     final res = ResponsiveHelper(context);
@@ -23,7 +24,7 @@ class CustomElevatedButton extends StatelessWidget {
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
           ),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           title,
           style:
