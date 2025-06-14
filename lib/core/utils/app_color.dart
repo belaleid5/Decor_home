@@ -9,7 +9,7 @@ class AppColor {
 
   // Teal 700
   static const Color iconColor = Color(0xFF4B4544); // Light Grey
-  static const int error = 0xFFB00020; // Red
+  static const Color containerColor = Color(0xFFFAF0E6); // Red
   static const int onPrimary = 0xFFFFFFFF; // White on Primary
   static const int onSecondary = 0xFF000000; // Black on Secondary
   static const int onBackground = 0xFF000000; // Black on Background

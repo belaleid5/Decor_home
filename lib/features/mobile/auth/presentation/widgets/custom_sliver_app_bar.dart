@@ -12,6 +12,7 @@ class CustomSliverAppBar extends StatelessWidget {
       floating: true,
       pinned: true,
       snap: true,
+      centerTitle: true,
       title: Text(
         title,
         style: AppTextStyles.inter20(
