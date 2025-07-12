@@ -1,12 +1,12 @@
 import 'package:decor_app/core/responsive/responsive_helper.dart';
 import 'package:decor_app/core/utils/app_color.dart';
-import 'package:decor_app/core/utils/app_text.dart';
+import 'package:decor_app/core/widget/adaptive_input_field.dart';
 import 'package:decor_app/core/widget/custom_sup_title_sections.dart';
 import 'package:decor_app/core/widget/custom_title_section.dart';
-import 'package:decor_app/features/mobile/auth/presentation/widgets/cusotm_text_form_field.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_elevated_butto.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_title_text_form.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/forget_password.dart';
+import 'package:decor_app/features/mobile/auth/presentation/widgets/password_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginDesktopView extends StatelessWidget {
@@ -15,6 +15,8 @@ class LoginDesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = ResponsiveHelper(context);
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
 
     return Center(
       child: Container(
@@ -38,22 +40,19 @@ class LoginDesktopView extends StatelessWidget {
             SizedBox(height: r.hp(2.5)),
             CustomTitleTextForm(title: "Username or email"),
 
-            CustomTextFormFiled(
-              style: AppTextStyles.poppins14(context),
-
-              hint: "Enter Your Email",
+            AdaptiveInputField(
+              context: context,
+              controller: emailController,
+              hintText: "Enter Your Email",
             ),
             SizedBox(height: r.hp(1.5)),
 
             CustomTitleTextForm(title: "Password"),
 
-            CustomTextFormFiled(
-              style: AppTextStyles.poppins14(context),
-              hint: "Enter Your Password",
-            ),
+            PasswordField(controller: passwordController),
             SizedBox(height: r.hp(4)),
 
-            CustomElevatedButton(title: "LogIn",),
+            CustomElevatedButton(title: "LogIn"),
             ForgetPassword(),
             // Add login button or anything else
           ],

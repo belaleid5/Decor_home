@@ -1,15 +1,30 @@
 import 'package:decor_app/core/responsive/responsive_helper.dart';
+import 'package:decor_app/core/routing/app_router.dart';
 import 'package:decor_app/core/widget/custom_sup_title_sections.dart';
 import 'package:decor_app/core/widget/custom_title_section.dart';
-import 'package:decor_app/features/mobile/auth/presentation/widgets/cusotm_text_form_field.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_elevated_butto.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_sliver_app_bar.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/custom_title_text_form.dart';
 import 'package:decor_app/features/mobile/auth/presentation/widgets/password_field.dart';
 import 'package:flutter/material.dart';
 
-class SetPasswordBody extends StatelessWidget {
+class SetPasswordBody extends StatefulWidget {
   const SetPasswordBody({super.key});
+
+  @override
+  State<SetPasswordBody> createState() => _SetPasswordBodyState();
+}
+
+class _SetPasswordBodyState extends State<SetPasswordBody> {
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +36,6 @@ class SetPasswordBody extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: res.screenWidth * 0.0812 ),
             child: Column(
-              spacing: 5,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomTitleSection(title: "Change The Password"),
@@ -31,12 +45,16 @@ class SetPasswordBody extends StatelessWidget {
                 ),
                 SizedBox(height: res.hp(1.5)),
                 CustomTitleTextForm(title: "Password"),
-                PasswordField(),
+                PasswordField(controller: passwordController),
                 SizedBox(height: res.hp(0.5)),
                 CustomTitleTextForm(title: "Confirm  Password"),
-                PasswordField(),
+                PasswordField(controller: confirmPasswordController),
                 SizedBox(height: res.hp(1.5)),
-                CustomElevatedButton(title: "Reset Password"),
+                CustomElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, AppRouter.loginRoute,);
+                  },
+                  title: "Reset Password"),
               ],
             ),
           ),
@@ -45,4 +63,3 @@ class SetPasswordBody extends StatelessWidget {
     );
   }
 }
-

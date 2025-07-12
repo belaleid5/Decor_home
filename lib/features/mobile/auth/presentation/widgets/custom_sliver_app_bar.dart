@@ -10,7 +10,7 @@ class CustomSliverAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       floating: true,
-      pinned: true,
+      elevation: 0.0,
       snap: true,
       centerTitle: true,
       title: Text(

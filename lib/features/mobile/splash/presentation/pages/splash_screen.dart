@@ -2,9 +2,11 @@ import 'package:decor_app/core/responsive/responsive_helper.dart';
 import 'package:decor_app/core/routing/app_router.dart';
 import 'package:decor_app/core/utils/app_color.dart';
 import 'package:decor_app/core/utils/app_text.dart';
+import 'package:decor_app/features/mobile/auth/presentation/blocs/auth_cubit.dart';
 import 'package:decor_app/features/mobile/splash/presentation/widgets/logo_animations.dart';
 import 'package:decor_app/features/mobile/splash/presentation/widgets/text_revel_animation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,14 +17,25 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(milliseconds: 3700), () {
-      if (mounted) {
-        Navigator.pushReplacementNamed(context, AppRouter.loginRoute);
-      }
-    });
+
+
+    @override
+    void initState() {
+      super.initState();
+      Future.delayed(const Duration(milliseconds: 3700), checkAuthState);
+    }
+
+
+
+  Future<void> checkAuthState() async {
+    final isLoggedIn = await context.read<AuthCubit>().checkIfLoggedIn();
+    if (!mounted) return;
+    Navigator.pushReplacementNamed(
+      context,
+      isLoggedIn ? AppRouter.mainRoute : AppRouter.loginRoute,
+    );
   }
+
 
   @override
   Widget build(BuildContext context) {

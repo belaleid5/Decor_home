@@ -3,7 +3,22 @@ import 'package:flutter/material.dart';
 
 OutlineInputBorder buildOutlineBorder() {
     return OutlineInputBorder(
-              borderSide: BorderSide(color: AppColor.secondary), // Color for radius border
+            
+              borderSide: BorderSide(
+                color: AppColor.secondary), // Color for radius border
               borderRadius: BorderRadius.circular(32),
+            );
+  }
+
+
+
+
+
+
+
+  OutlineInputBorder buildOutlineBorderDeskTop() {
+    return OutlineInputBorder(
+              borderSide: BorderSide(color: AppColor.secondary), // Color for radius border
+              borderRadius: BorderRadius.circular(6),
             );
   }
