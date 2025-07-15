@@ -22,7 +22,7 @@ class CustomSliverGridView extends StatelessWidget {
             child: Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 50),
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(color: AppColor.primaryColor,),
               ),
             ),
           );
@@ -132,22 +132,16 @@ class CustomSliverGridView extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
+                             Icon(
                                 Icons.favorite_border,
                                 size: 18,
                                 color: AppColor.primaryColor,
                               ),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
+                            Icon(
                                 Icons.shopping_cart_outlined,
                                 size: 18,
                                 color: AppColor.primaryColor,
                               ),
-                            ),
                           ],
                         ),
                       ],

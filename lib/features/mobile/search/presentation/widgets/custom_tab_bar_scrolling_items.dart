@@ -32,8 +32,11 @@ class CustomTabBarScrollingItems extends StatelessWidget {
                       children: [
                         Text(
                           item.name,
-                          style: AppTextStyles.medium15.copyWith(
+                          style: AppTextStyles.poppins14(context).copyWith(
                             color: AppColor.insideColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         SizedBox(

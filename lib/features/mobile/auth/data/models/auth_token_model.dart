@@ -8,10 +8,11 @@ class AuthTokenModel extends AuthTokenEntity {
     required super.refreshToken,
   });
 
+  /// ✅ Parsing JSON Response from API
   factory AuthTokenModel.fromJson(Map<String, dynamic> json) {
     final user = json["user"];
-    final access = json['access_token'];
-    final refresh = json['refresh_token'];
+    final access = json['access'];
+    final refresh = json['refresh'];
 
     if (user == null || access == null || refresh == null) {
       throw Exception("Parsing failed: missing required fields in AuthTokenModel");
@@ -25,19 +26,17 @@ class AuthTokenModel extends AuthTokenEntity {
     );
   }
 
-
-
+  /// 🔁 Convert to JSON (if needed for caching or sending)
   Map<String, dynamic> toJson() => {
         "user": {
           "username": userName,
           "email": email,
         },
-        "access_token": accessToken,
-        "refresh_token": refreshToken,
+        "access": accessToken,
+        "refresh": refreshToken,
       };
 
-
-
+  /// 🔁 Convert from domain entity to model
   factory AuthTokenModel.fromEntity(AuthTokenEntity entity) => AuthTokenModel(
         userName: entity.userName,
         email: entity.email,
@@ -45,6 +44,7 @@ class AuthTokenModel extends AuthTokenEntity {
         refreshToken: entity.refreshToken,
       );
 
+  /// 🔁 Convert back to domain entity
   AuthTokenEntity toEntity() => AuthTokenEntity(
         userName: userName,
         email: email,
